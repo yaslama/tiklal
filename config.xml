@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="air.com.ami.sidur" android-versionCode="2000004" versionCode="2000004" version="2.0.04" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>תִּכְּלַאל – סידור תפילה תימני</name>
+    <description>
+        תִּכְּלַאל – סידור תפילה בנוסח הקדום והזן של קהילות קודש תימן יע"א – בלדי
+    </description>
+    <author email="tyemanphone@gmail.com">
+        Yaacov Akiba Slama
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="Orientation" value="portrait" />
+    <platform name="android">
+        <preference name="android-minSdkVersion" value="21" />
+        <icon src="res/icon_36.png" density="ldpi" />
+        <icon src="res/icon_48.png" density="mdpi" />
+        <icon src="res/icon_72.png" density="hdpi" />
+        <icon src="res/icon_96.png" density="xhdpi" />
+        <icon src="res/icon_144.png" density="xxhdpi" />
+        <icon src="res/icon_192.png" density="xxxhdpi" />
+     </platform>
+</widget>
