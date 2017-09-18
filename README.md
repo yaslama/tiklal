@@ -1,5 +1,5 @@
 # תִּכְּלַאל
-סידור תפילה בנוסח הקדום והזן של קהילות קודש תימן יע"א – בלדי
+סידור תפילה בנוסח הקדום והזך של קהילות קודש תימן יע"א – בלדי
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
