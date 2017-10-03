@@ -97,9 +97,9 @@ class BookScroller {
 
 	initContent(initialNode, timeout) {
 
-		if (this._inInitContent) {
-			return;
-		}
+		//if (this._inInitContent) {
+		//	return;
+		//}
 		this._inInitContent = true;
 		//var enableInitContent = _ => {
 		//	this._inInitContent = false;
