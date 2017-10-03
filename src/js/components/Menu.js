@@ -40,7 +40,7 @@ export class Menu extends React.Component {
 		var keyPrefix = '';
 		var style = {
 			width: "70vw",
-			backgroundImage: "url(images/button.png)",
+			backgroundImage: "url(images/button.jpg)",
 			backgroundColor: "transparent",
 			height: "15.95vw",
 			fontFamily: "Text Font",

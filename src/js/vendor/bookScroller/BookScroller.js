@@ -323,7 +323,6 @@ class BookScroller {
 			var y, delta;
 			if (this._pressed) {
 				y = this._ypos(e);
-				console.log('drag2', y);
 				delta = this._reference - y;
 				if (delta > 2 || delta < -2) {
 					this._reference = y;
