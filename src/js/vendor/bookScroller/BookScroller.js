@@ -26,6 +26,7 @@ function midpoint(arr) {
 class BookScroller {
 	constructor(node, options) {
 
+		this._inInitContent = false;
 		this._node = node;
 		this._getBefore = options.before;
 		this._getAfter = options.after;
@@ -49,6 +50,7 @@ class BookScroller {
 	}
 
 	_addEvents(node) {
+		console.log("scroller - addEvents");
 		if (typeof window.ontouchstart !== 'undefined') {
 			node.addEventListener('touchstart', this.tap.bind(this));
 			node.addEventListener('touchmove', this.drag.bind(this));
@@ -99,9 +101,9 @@ class BookScroller {
 			return;
 		}
 		this._inInitContent = true;
-		var enableInitContent = _ => {
-			this._inInitContent = false;
-		}.bind(this);
+		//var enableInitContent = _ => {
+		//	this._inInitContent = false;
+		//}.bind(this);
 
 		var container = this._node;
 		var yNext, childNext, yPrev, childPrev;
@@ -143,7 +145,7 @@ class BookScroller {
 			}
 		}
 		addEvents(container);
-		enableInitContent();
+		//enableInitContent();
 	}
 
 	_ypos(e) {
@@ -291,6 +293,7 @@ class BookScroller {
 
 	drag(e) {
 		//console.log('drag', this._pressed, e);
+
 		if (e.touches && e.touches.length == 2 && this._pinching) {
 			var coords = [];
 			for(var i = 0, finger; finger = e.touches[i]; i++) {
@@ -320,7 +323,7 @@ class BookScroller {
 			var y, delta;
 			if (this._pressed) {
 				y = this._ypos(e);
-				//console.log('drag2', y);
+				console.log('drag2', y);
 				delta = this._reference - y;
 				if (delta > 2 || delta < -2) {
 					this._reference = y;
