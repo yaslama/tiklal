@@ -51,8 +51,9 @@ export class Menu extends React.Component {
 			fontSize: "5rem",
 			lineHeight: "15.95vw",
 			backgroundRepeat: "no-repeat",
-			outline: "none"
-    	};
+			outline: "none",
+			WebkitTapHighlightColor: "transparent"
+		};
     	var styleLast = {};
     	Object.assign(styleLast, style, {'marginBottom':'5vw'});
 		var clickHandler = function(i){
