@@ -145,12 +145,12 @@ export class Menu extends React.Component {
 				{ this._getMenu(this.state.menu) }
 				</div>
 				<img src="images/bottom.png" style={{ width: "100%", position: "absolute", left: 0, bottom: 0 }} />
-				<div onClick={ function() { navigator.app.exitApp(); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block" }} ></div>
-				<div onClick={ doNext } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block" }} ></div>
-				<div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block" }} ></div>
-				<div onClick={ doBack } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block" }} ></div>
-				<div onClick={ function() { SidurActionCreators.setMenu([]); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block" }} ></div>
-				<div style={{ height: "5vw", width:"100%", position:'absolute', bottom:0, left:0, display: "block" }}></div>
+				<div onClick={ function() { navigator.app.exitApp(); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ doNext } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ doBack } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ function() { SidurActionCreators.setMenu([]); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div style={{ height: "5vw", width:"100%", position:'absolute', bottom:0, left:0, display: "block", WebkitTapHighlightColor: "transparent" }}></div>
 			</div>
         );
 	}
