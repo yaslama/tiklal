@@ -97,13 +97,10 @@ class BookScroller {
 
 	initContent(initialNode, timeout) {
 
-		//if (this._inInitContent) {
-		//	return;
-		//}
+		if (this._inInitContent) {
+			return;
+		}
 		this._inInitContent = true;
-		//var enableInitContent = _ => {
-		//	this._inInitContent = false;
-		//}.bind(this);
 
 		var container = this._node;
 		var yNext, childNext, yPrev, childPrev;
@@ -145,7 +142,7 @@ class BookScroller {
 			}
 		}
 		addEvents(container);
-		//enableInitContent();
+		this._inInitContent = false;
 	}
 
 	_ypos(e) {
