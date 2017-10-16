@@ -50,7 +50,6 @@ class BookScroller {
 	}
 
 	_addEvents(node) {
-		console.log("scroller - addEvents");
 		if (typeof window.ontouchstart !== 'undefined') {
 			node.addEventListener('touchstart', this.tap.bind(this));
 			node.addEventListener('touchmove', this.drag.bind(this));
@@ -193,6 +192,7 @@ class BookScroller {
 		if (elementAtTop != this._elementAtTop) {
 			this._elementAtTop = elementAtTop;
 			this._setTop(elementAtTop);
+			console.log(elementAtTop);
 		}
 	}
 
@@ -373,11 +373,6 @@ class BookScroller {
 				this._scroll(-toTarget);
 			}
 		}
-	}
-
-
-	test() {
-		console.log('aa');
 	}
 }
 module.exports = BookScroller;

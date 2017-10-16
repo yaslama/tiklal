@@ -96,7 +96,6 @@ var Container = React.createClass({
         setTop: this._setTopElement
       });
       this.setState({'scroller':scroller});
-      scroller.test();
     });
   },
 
