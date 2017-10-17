@@ -95,6 +95,12 @@ class BookScroller {
 	}
 
 	initContent(initialNode, timeout) {
+		console.log(initialNode);
+		var dataPos = initialNode.getAttribute('data-pos');
+		if (dataPos) {
+			var currentIndex = JSON.parse(dataPos);
+			console.log(currentIndex);
+		}
 
 		if (this._inInitContent) {
 			return;
@@ -188,7 +194,6 @@ class BookScroller {
 		this._addRemove(delta, childMin, childMax);
 
 		var elementAtTop = document.elementFromPoint((this._rect.right-this._rect.left)/2, this._rect.top + 0.05*window.innerWidth);
-		//console.log(elementAtTop);
 		if (elementAtTop != this._elementAtTop) {
 			this._elementAtTop = elementAtTop;
 			this._setTop(elementAtTop);

@@ -3,7 +3,7 @@ var HtmlWebpackPlugtin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    entry: './src/js/index.js',
+    entry: './src/js/index.jsx',
     output: {
         path: path.resolve(__dirname, 'www'),
         filename: 'index_bundle.js'
@@ -12,6 +12,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.(js)$/, use: 'babel-loader'},
+            { test: /\.(jsx)$/, use: 'babel-loader'},
             { test: /\.(css)$/, use: ['style-loader', 'css-loader']},
         ]
     },

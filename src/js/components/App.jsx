@@ -4,8 +4,8 @@ var SidurStore = require('../stores/SidurStore');
 var SidurActionCreators = require('../actions/SidurActionCreators');
 var SidurContent = require('../SidurContent');
 var SidurConstants = require('../constants/SidurConstants');
-var Container = require('./Container.js');
-var Menu = require('./Menu.js');
+var Container = require('./Container.jsx');
+var Menu = require('./Menu.jsx');
 
 
 function getStateFromStores(o) {
