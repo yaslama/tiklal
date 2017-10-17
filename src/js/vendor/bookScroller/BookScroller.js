@@ -26,6 +26,7 @@ function midpoint(arr) {
 class BookScroller {
 	constructor(node, options) {
 
+		this._inInitContent = false;
 		this._node = node;
 		this._getBefore = options.before;
 		this._getAfter = options.after;
@@ -94,14 +95,17 @@ class BookScroller {
 	}
 
 	initContent(initialNode, timeout) {
+		console.log(initialNode);
+		var dataPos = initialNode.getAttribute('data-pos');
+		if (dataPos) {
+			var currentIndex = JSON.parse(dataPos);
+			console.log(currentIndex);
+		}
 
 		if (this._inInitContent) {
 			return;
 		}
 		this._inInitContent = true;
-		var enableInitContent = _ => {
-			this._inInitContent = false;
-		}.bind(this);
 
 		var container = this._node;
 		var yNext, childNext, yPrev, childPrev;
@@ -143,7 +147,7 @@ class BookScroller {
 			}
 		}
 		addEvents(container);
-		enableInitContent();
+		this._inInitContent = false;
 	}
 
 	_ypos(e) {
@@ -190,10 +194,10 @@ class BookScroller {
 		this._addRemove(delta, childMin, childMax);
 
 		var elementAtTop = document.elementFromPoint((this._rect.right-this._rect.left)/2, this._rect.top + 0.05*window.innerWidth);
-		//console.log(elementAtTop);
 		if (elementAtTop != this._elementAtTop) {
 			this._elementAtTop = elementAtTop;
 			this._setTop(elementAtTop);
+			console.log(elementAtTop);
 		}
 	}
 
@@ -291,6 +295,7 @@ class BookScroller {
 
 	drag(e) {
 		//console.log('drag', this._pressed, e);
+
 		if (e.touches && e.touches.length == 2 && this._pinching) {
 			var coords = [];
 			for(var i = 0, finger; finger = e.touches[i]; i++) {
@@ -320,7 +325,6 @@ class BookScroller {
 			var y, delta;
 			if (this._pressed) {
 				y = this._ypos(e);
-				//console.log('drag2', y);
 				delta = this._reference - y;
 				if (delta > 2 || delta < -2) {
 					this._reference = y;
@@ -374,11 +378,6 @@ class BookScroller {
 				this._scroll(-toTarget);
 			}
 		}
-	}
-
-
-	test() {
-		console.log('aa');
 	}
 }
 module.exports = BookScroller;

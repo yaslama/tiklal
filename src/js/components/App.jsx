@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var SidurStore = require('../stores/SidurStore');
 var SidurActionCreators = require('../actions/SidurActionCreators');
 var SidurContent = require('../SidurContent');

@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var SidurStore = require('../stores/SidurStore');
 var SidurActionCreators = require('../actions/SidurActionCreators');
 var SidurContent = require('../SidurContent');
@@ -39,7 +40,7 @@ export class Menu extends React.Component {
 		var keyPrefix = '';
 		var style = {
 			width: "70vw",
-			backgroundImage: "url(images/button.png)",
+			backgroundImage: "url(images/button.jpg)",
 			backgroundColor: "transparent",
 			height: "15.95vw",
 			fontFamily: "Text Font",
@@ -50,8 +51,9 @@ export class Menu extends React.Component {
 			fontSize: "5rem",
 			lineHeight: "15.95vw",
 			backgroundRepeat: "no-repeat",
-			outline: "none"
-    	};
+			outline: "none",
+			WebkitTapHighlightColor: "transparent"
+		};
     	var styleLast = {};
     	Object.assign(styleLast, style, {'marginBottom':'5vw'});
 		var clickHandler = function(i){
@@ -144,12 +146,12 @@ export class Menu extends React.Component {
 				{ this._getMenu(this.state.menu) }
 				</div>
 				<img src="images/bottom.png" style={{ width: "100%", position: "absolute", left: 0, bottom: 0 }} />
-				<div onClick={ function() { navigator.app.exitApp(); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block" }} ></div>
-				<div onClick={ doNext } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block" }} ></div>
-				<div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block" }} ></div>
-				<div onClick={ doBack } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block" }} ></div>
-				<div onClick={ function() { SidurActionCreators.setMenu([]); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block" }} ></div>
-				<div style={{ height: "5vw", width:"100%", position:'absolute', bottom:0, left:0, display: "block" }}></div>
+				<div onClick={ function() { navigator.app.exitApp(); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ doNext } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ doBack } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div onClick={ function() { SidurActionCreators.setMenu([]); } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+				<div style={{ height: "5vw", width:"100%", position:'absolute', bottom:0, left:0, display: "block", WebkitTapHighlightColor: "transparent" }}></div>
 			</div>
         );
 	}

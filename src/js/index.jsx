@@ -1,7 +1,8 @@
-require("babelify/polyfill.js");
+//require("babelify/polyfill.js");
 var React = require('react');
+var ReactDOM = require('react-dom');
 var App = require('./components/App.jsx');
 var injectTapEventPlugin = require("react-tap-event-plugin");
 injectTapEventPlugin();
 
-React.render(<App/>, document.body);
+ReactDOM.render(<App/>, document.getElementById("main"));

@@ -1,10 +1,13 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var SidurStore = require('../stores/SidurStore');
 var SidurContent = require('../SidurContent.json');
 var SidurActionCreators = require('../actions/SidurActionCreators');
 var BookScroller = require('../vendor/bookScroller/BookScroller');
 
 function toNext(that, scroller) {
+  console.log("toNext");
+
   var index = that.props.topIndex.slice(0);
   var c = SidurContent.content;
   var level1Key = Object.keys(c[index[0]])[0];
@@ -30,6 +33,7 @@ function toNext(that, scroller) {
 }
 
 function toPrev(that, scroller) {
+  console.log("toPrev");
   var index = that.props.topIndex.slice(0);
   //console.log('toPrev:', index)
   var c = SidurContent.content;
@@ -70,7 +74,7 @@ var Container = React.createClass({
     this._endIndex = this.props.topIndex.slice(0);
 
     var that = this;
-    var nodeContent = React.findDOMNode(that).querySelector('.Container');
+    var nodeContent = ReactDOM.findDOMNode(that).querySelector('.Container');
 
     var index = this.props.topIndex.slice(0);
     var jsonIndex = JSON.stringify(index);
@@ -92,7 +96,6 @@ var Container = React.createClass({
         setTop: this._setTopElement
       });
       this.setState({'scroller':scroller});
-      scroller.test();
     });
   },
 
@@ -132,11 +135,11 @@ var Container = React.createClass({
           zIndex: 1 }}>{this.props.title}<br />{this.props.subtitle}</div>
         <div style={{ height: window.innerHeight - 0.38*window.innerWidth }} className="Container"></div>
         <img src="images/bottom.png" style={{ width: "100%", position: "absolute", left: 0, bottom: 0 }} />
-        <div onClick={ function() { SidurActionCreators.setMenu([that.props.topIndex[0]]) } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block" }} ></div>
-        <div onClick={ function() { toNext(that, that.state.scroller); } } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block" }} ></div>
-        <div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block" }} ></div>
-        <div onClick={ function() { toPrev(that, that.state.scroller); } } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block" }} ></div>
-        <div onClick={ function() { SidurActionCreators.setMenu([]) } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block" }} ></div>
+        <div onClick={ function() { SidurActionCreators.setMenu([that.props.topIndex[0]]) } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: 0, display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+        <div onClick={ function() { toNext(that, that.state.scroller); } } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "22.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+        <div onClick={ function() { console.log("logo") } } style={{ height: "20vw", width: "14.6875vw", position: "absolute", bottom: "5vw", left: "42.65625vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+        <div onClick={ function() { toPrev(that, that.state.scroller); } } style={{ height: "20vw", width: "20vw", position: "absolute", bottom: "5vw", left: "57.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
+        <div onClick={ function() { SidurActionCreators.setMenu([]) } } style={{ height: "20vw", width: "22.65625vw", position: "absolute", bottom: "5vw", left: "77.34375vw", display: "block", WebkitTapHighlightColor: "transparent" }} ></div>
         <div style={{ height: "5vw", width:"100%", position:'absolute', bottom:0, left:0, display: "block" }}></div>
       </div>
 		);
