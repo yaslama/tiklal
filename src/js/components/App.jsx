@@ -95,7 +95,6 @@ var App = React.createClass({
     //console.log(getStateFromStores());
     var state = getStateFromStores(this);
     this.setState(state);
-    //console.log(state);
   }
 });
 
