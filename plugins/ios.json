@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.issahar.tiklal"
+            "PACKAGE_NAME": "com.ami.sidur"
         }
     },
     "dependent_plugins": {}
