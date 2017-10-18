@@ -95,12 +95,6 @@ class BookScroller {
 	}
 
 	initContent(initialNode, timeout) {
-		console.log(initialNode);
-		var dataPos = initialNode.getAttribute('data-pos');
-		if (dataPos) {
-			var currentIndex = JSON.parse(dataPos);
-			console.log(currentIndex);
-		}
 
 		if (this._inInitContent) {
 			return;
@@ -197,7 +191,7 @@ class BookScroller {
 		if (elementAtTop != this._elementAtTop) {
 			this._elementAtTop = elementAtTop;
 			this._setTop(elementAtTop);
-			console.log(elementAtTop);
+			//console.log(elementAtTop);
 		}
 	}
 
@@ -290,7 +284,7 @@ class BookScroller {
 	}
 
 	doScale(e, e2) {
-		console.log("doScale:", e, e2);
+		//console.log("doScale:", e, e2);
 	}
 
 	drag(e) {

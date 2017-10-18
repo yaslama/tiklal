@@ -6,7 +6,7 @@ var SidurActionCreators = require('../actions/SidurActionCreators');
 var BookScroller = require('../vendor/bookScroller/BookScroller');
 
 function toNext(that, scroller) {
-  console.log("toNext");
+  //console.log("toNext");
 
   var index = that.props.topIndex.slice(0);
   var c = SidurContent.content;
@@ -33,7 +33,7 @@ function toNext(that, scroller) {
 }
 
 function toPrev(that, scroller) {
-  console.log("toPrev");
+  //console.log("toPrev");
   var index = that.props.topIndex.slice(0);
   //console.log('toPrev:', index)
   var c = SidurContent.content;

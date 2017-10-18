@@ -56,6 +56,7 @@ export class Menu extends React.Component {
 		};
     	var styleLast = {};
     	Object.assign(styleLast, style, {'marginBottom':'5vw'});
+		//console.log(menu);
 		var clickHandler = function(i){
 			return function(e) {
 				//console.log("type1");
@@ -88,12 +89,12 @@ export class Menu extends React.Component {
 		var doNext = (menu.length==1)&&(menu[0]<SidurContent.content.length-1) ? function() {
 			SidurActionCreators.setMenu([menu[0] + 1]);
 		} : function() {
-			console.log("next");
+			//console.log("next");
 		}
 		var doBack = (menu.length==1)&&(menu[0]>0) ? function() {
 			SidurActionCreators.setMenu([menu[0] - 1]);
 		} : function() {
-			console.log("back")
+			//console.log("back")
 		}
 		var titleStyle = {
 			position: "absolute",
