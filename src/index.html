@@ -2,14 +2,32 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<meta name="format-detection" content="telephone=no" />
+	<!-- <meta name="format-detection" content="telephone=no" />
 	<meta name="msapplication-tap-highlight" content="no" />
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, target-densitydpi=device-dpi" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1, target-densitydpi=device-dpi" /> -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/SidurContent.js"></script>
+    <script src="js/content.js"></script>
+    <script src="js/menu.js"></script>
 	<link rel="stylesheet" href="styles/main.css">
 	<title>תכלאל</title>
 </head>
 <body dir="rtl" style="background-color: #fef9e3;">
-	<div id="main" style="width: 100%; height: 100%"></div>
-	<script src="cordova.js"></script>
+	<!-- <div id="main" style="width: 100%; height: 75vw"></div> -->
+	<div>
+        <img src="images/top.png" style='width: 100%; position: "absolute"; top: 0; left: 0; display: "block"; z-index: 1' />
+        <div id="titleDiv">כותרת<br />כותרת משנה</div>
+        <div id="main" style="width: 100%; height: 100%" class="Container"></div>
+        <img src="images/bottom.png" style='width: 100%; position: "absolute"; left: 0; bottom: 0' />
+        <div style='height: "20vw"; width: "22.65625vw"; position: "absolute"; bottom: "5vw"; left: 0; display: "block"; WebkitTapHighlightColor: "transparent"' ></div>
+        <div onClick='toNext(); ' style='height: "20vw"; width: "20vw"; position: "absolute"; bottom: "5vw"; left: "22.65625vw"; display: "block"; WebkitTapHighlightColor: "transparent"'></div>
+        <div onClick='console.log("logo") ' style='height: "20vw"; width: "14.6875vw"; position: "absolute"; bottom: "5vw"; left: "42.65625vw"; display: "block"; WebkitTapHighlightColor: "transparent"'></div>
+        <div onClick='toPrev(); ' style='height: "20vw"; width: "20vw"; position: "absolute"; bottom: "5vw"; left: "57.34375vw"; display: "block"; WebkitTapHighlightColor: "transparent"'></div>
+        <div onClick='SidurActionCreators.setMenu([]) ' style='height: "20vw"; width: "22.65625vw"; position: "absolute"; bottom: "5vw"; left: "77.34375vw"; display: "block"; WebkitTapHighlightColor: "transparent"'></div>
+        <div style='height: "5vw"; width:"100%"; position:"absolute"; bottom:0; left:0; display: "block"'></div>
+      </div>
+
+
+	<script src="js/main.js"></script>
 </body>
 </html>

@@ -81,3 +81,20 @@ html { font-size: 1vw; }
 .menuContainer::-webkit-scrollbar { display: none; }
 /*.Container > div { margin-left: 1vw; margin-right: 1vw; }*/
 .ftscroller_scrollbary { left: 0; right: inherit}
+
+#titleDiv {
+	position: "absolute";
+	top: "7.5vw";
+	font-size: "6.5vw";
+	font-family: "Title Font";
+	color: "#542b22";
+	font-weight: "bold";
+	right: "43vw";
+	width: "54vw";
+	line-height: "0.8em";
+	height: "1.8em";
+	white-space: "nowrap";
+	overflow: "hidden";
+	text-overflow: "ellipsis";
+	z-index: 1 
+}
